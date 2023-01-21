@@ -1,5 +1,5 @@
 
-const todoList = [
+let todoList = [
     {itemname:"Assignment1", deadline:'01/21/2023', priority:"low", completed:false},
     {itemname:"Assignment2", deadline:'01/22/2023', priority:"low", completed:true},
     {itemname:"Assignment3", deadline:'01/21/2023', priority:"low", completed:false},
@@ -35,15 +35,16 @@ function addTodo() {
       };
     
       todoList.push(todo);
-      renderTodo(todoList);
+      renderTodo();
       $('#itemname').val('');
       $('#deadline').val('');
       $('#priority').val('');
-
+      $('#todo_status').text('');
+    
 }
 
-function renderTodo(todoList){
-   // localStorage.setItem('todoList', JSON.stringify(todoList));
+function renderTodo(){
+   localStorage.setItem('todoList', JSON.stringify(todoList));
   
     let filterObjs = filtertodoList(todoList);
     let sno = 0;
@@ -105,50 +106,35 @@ function renderTodo(todoList){
     completerow+= '</table>';
 
     if(futureTodo.length===0)
-        document.getElementById("completed_list").innerHTML='<div id="filter_data"><div>No Complete Todo data found.</div></div>';
+        document.getElementById("completed_list").innerHTML='<div id="filter_data"><div><h3>No Complete Todo data found.</div></div>';
     else
         document.getElementById("completed_list").innerHTML=completerow;
 }
 
 function updateTodo(listkey) {
-    // var str = localStorage.getItem("todoList");
-    // if (str != null) {
-    //     todoArray = JSON.parse(str);
-    // }
-
-     todoList[listkey]['completed'] = true;
-    console.log(todoList[listkey]);
-
-   // todoList.splice(listkey, 1);
-   // todoList = JSON.stringify(todoArray);
-    // localStorage.setItem('todoList', JSON.stringify(todoArray));
-    //todoList = todoArray;
-     //console.log(todoList);
-    renderTodo(todoList);
+    var str = localStorage.getItem("todoList");
+    if (str != null) {
+        todoList = JSON.parse(str);
+    }
+    todoList[listkey]['completed'] = true;
+    renderTodo();
 }
 
 function deleteTodo(listkey) {
-    // var str = localStorage.getItem("todoList");
-    // if (str != null) {
-    //     todoArray = JSON.parse(str);
-    // }
-   // console.log(listkey);
-    console.log(todoList);
-    console.log('fffffffffffffffffff');
+    var str = localStorage.getItem("todoList");
+    if (str != null) {
+        todoList = JSON.parse(str);
+    }
     todoList.splice(listkey, 1);
-   // todoList = JSON.stringify(todoArray);
-    // localStorage.setItem('todoList', JSON.stringify(todoArray));
-    //todoList = todoArray;
-     //console.log(todoList);
-    renderTodo(todoList);
+    renderTodo();
 }
 
-function filtertodoList(todoList) {
-    //var str = localStorage.getItem("todoList");
-    // if (str != null) {
-    //   todoArray = JSON.parse(str);
-    // }
-    todoArray = todoList;
+function filtertodoList() {
+    var str = localStorage.getItem("todoList");
+    if (str != null) {
+      todoArray = JSON.parse(str);
+    }
+
     let filterData = [];
     filterData['today_todo'] = [];
     filterData['future_todo'] = [];
@@ -183,12 +169,12 @@ function formatDate(date) {
       padTo2Digits(date.getMonth() + 1),
       date.getFullYear(),
     ].join('/');
-  }
+}
 
 function capitalize(string)
 {
     return string[0].toUpperCase() + string.slice(1);
 }
 window.onload=function(){   
-    renderTodo(todoList);
+    renderTodo();
 }
