@@ -1,0 +1,130 @@
+html,body {
+    font-family:"Verdana",sans-serif;
+    background-color: #fff;
+    color: #000;
+    height: 100vh;
+    width: 100vw;
+}
+
+  .todo_column {
+    float: left;
+    width: 25%;
+  }
+  
+  /* Clear floats after the columns */
+  .container {
+    width: 100vw;
+    
+  }
+  #itemname{
+    border: 2px solid black;
+    width: 350px;
+    padding: 10px;
+    margin-right: 10px;
+  }
+  #deadline{
+    border: 2px solid black;
+    width: 350px;
+    padding: 10px;
+    margin-right: 10px;
+  }
+  #priority{
+    border: 2px solid black;
+    width: 350px;
+    padding: 10px;
+    margin-right: 10px;
+  }
+  #add_item_button{
+    margin: 0px;
+    padding: 0px;
+  }
+  #btn{
+    background-color: black;
+    width:100px;
+    padding: 10px;
+    color: white;
+  }
+  #img{
+    width:20px;
+    height:20px;
+    padding: 0px 10px;
+  }
+  #add_item{
+    width: 100px;
+    padding: 10px;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }
+
+
+  #todo_status {
+    color: green;
+  }
+.data_row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 10px;
+    width: 170%;
+    margin: 10px;
+    background-color: #000;
+    color:#fff;
+}
+
+.data_row_complete{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 10px;
+    width: 180%;
+    margin: 10px;
+    background-color:white;
+    color:black;
+}
+
+.data_column {
+    display: flex;
+    
+    padding-left: 10px;
+}
+
+#item_name {
+    width: 150px !important;
+}
+
+#column_profession {
+    width: 250px !important;
+}
+
+#add_item_button{
+    background: #fff;
+    font-size: 15px;
+    line-height: 3;
+    text-align: center;
+    width:120px;
+}
+#add_item_button a{
+    text-decoration: none !important;
+    color: #000;
+}
+
+.data_header{
+    padding-top:20px;
+}
+
+#add_user_form{
+    padding-top:10px;
+}
+
+#new_user_add_status {
+    color:green;
+    font-weight: bold;
+}
+
+.displayNone {
+    display: none;
+}

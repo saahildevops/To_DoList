@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>To-Do List</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="style.css">
+
+<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+<script src="action.js"></script>
+<body>
+<div><center><h1>To-Do List</h1></center></div>
+<div id="add_todo">
+    <div class="container">
+        <input type="text" id="itemname" name="itemname" placeholder="Item Name">
+        <input type="date" id="deadline" name="deadline" placeholder="Deadline">
+        <select id="priority" name="priority" required>
+            <option value="">Priority</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>
+        <button onclick="addTodo()" id="btn"><a href="javascript:;" id="add_item" >Add Item</a></button>  
+    </div>
+    
+</div>
+<div id="todo_status">
+ </div>
+
+
+<div class="data_header">
+    <h2>Today's TodoList</h2>
+</div>
+<div id="todays_list">No Date found</div>
+
+<div class="data_header">
+    <h2>Future TodoList</h2>
+</div>
+<div id="future_list">No Date found</div>
+
+<div class="data_header">
+    <h2>Completed TodoList</h2>
+</div>
+<div id="completed_list">No Date found</div>
+
+
+</body>
+</html>
